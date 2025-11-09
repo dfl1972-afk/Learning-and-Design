@@ -1,359 +1,261 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Damien Lowe - Skills Dashboard</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .chart-container { position: relative; width: 100%; max-width: 500px; height: 400px; margin-left: auto; margin-right: auto; }
-        @media (max-width: 768px) { .chart-container { height: 350px; } }
-        .skill-card, .project-card { transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
-        .skill-highlight { transform: scale(1.05); box-shadow: 0 0 20px 5px rgba(99, 102, 241, 0.4); background-color: #eef2ff; }
-        .project-highlight { transform: scale(1.03); border-color: #6366f1; box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.2); }
-        .nav-active { color: #6366f1; font-weight: 600; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Damien Lowe - Skills Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body{font-family:'Inter',sans-serif}
+    .chart-container{position:relative;width:100%;max-width:500px;height:400px;margin-left:auto;margin-right:auto}
+    @media (max-width:768px){.chart-container{height:350px}}
+    .skill-card,.project-card{transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+    .skill-highlight{transform:scale(1.05);box-shadow:0 0 20px 5px rgba(99,102,241,.4);background-color:#eef2ff}
+    .project-highlight{transform:scale(1.03);border-color:#6366f1;box-shadow:0 10px 15px -3px rgba(99,102,241,.2)}
+    .nav-active{color:#6366f1;font-weight:600}
+  </style>
 </head>
 <body class="bg-neutral-50 text-neutral-800 leading-relaxed">
 
-    <nav class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm shadow-md">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex h-16 items-center justify-between">
-                <div class="flex-shrink-0">
-                    <span class="text-xl font-bold text-indigo-600">Portfolio</span>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#home" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-neutral-600 hover:text-indigo-600" data-nav-section="home">Home</a>
-                        <a href="#skills" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-neutral-600 hover:text-indigo-600" data-nav-section="skills">Skills Dashboard</a>
-                        <a href="#projects" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-neutral-600 hover:text-indigo-600" data-nav-section="projects">Case Studies</a>
-                    </div>
-                </div>
-            </div>
+  <nav class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm shadow-md">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <div class="flex-shrink-0"><span class="text-xl font-bold text-indigo-600">Portfolio</span></div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-4">
+            <a href="#home" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-neutral-600 hover:text-indigo-600" data-nav-section="home">Home</a>
+            <a href="#skills" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-neutral-600 hover:text-indigo-600" data-nav-section="skills">Skills Dashboard</a>
+            <a href="#projects" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-neutral-600 hover:text-indigo-600" data-nav-section="projects">Case Studies</a>
+          </div>
         </div>
-    </nav>
+      </div>
+    </div>
+  </nav>
 
-    <main class="container mx-auto mt-10 max-w-7xl px-4 sm:px-6 lg:px-8">
+  <main class="container mx-auto mt-10 max-w-7xl px-4 sm:px-6 lg:px-8">
 
-        <section id="home" class="py-16 text-center">
-            <h1 class="text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl md:text-6xl">
-                Instructional Design & Regulatory Compliance
-            </h1>
-            <p class="mt-6 text-lg leading-8 text-neutral-600 max-w-3xl mx-auto">
-                Showcasing expertise in developing high-stakes, compliant training content, translating complex legislation into accessible learner resources, and driving institutional quality assurance.
-            </p>
-            <p class="mt-4 text-md leading-8 text-neutral-500 max-w-2xl mx-auto">
-                <strong>Target Roles:</strong> Senior Instructional Designer, VET Compliance Manager, Learning & Development Specialist.
-            </p>
-        </section>
+    <section id="home" class="py-16 text-center">
+      <h1 class="text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl md:text-6xl">
+        Instructional Design & Regulatory Compliance
+      </h1>
+      <p class="mt-6 text-lg leading-8 text-neutral-600 max-w-3xl mx-auto">
+        Showcasing expertise in developing high-stakes, compliant training content, translating complex legislation into accessible learner resources, and driving institutional quality assurance.
+      </p>
+      <p class="mt-4 text-md leading-8 text-neutral-500 max-w-2xl mx-auto">
+        <strong>Target Roles:</strong> Senior Instructional Designer, VET Compliance Manager, Learning & Development Specialist.
+      </p>
+    </section>
 
-        <div class="border-b border-neutral-200 my-12"></div>
+    <div class="border-b border-neutral-200 my-12"></div>
 
-        <section id="skills" class="py-16">
-            <h2 class="text-3xl font-bold text-center text-neutral-900">Skills Dashboard</h2>
-            <p class="mt-4 text-lg text-neutral-600 text-center max-w-3xl mx-auto">
-                Welcome. This portfolio demonstrates my expertise in bridging the gap between complex regulation and accessible, high-impact learning design. Below is an interactive dashboard of my core competencies. <br>
-                <strong class="text-indigo-600">Click any skill</strong> to see how I apply it, or <strong class="text-indigo-600">select a project</strong> to see the skills involved.
-            </p>
+    <section id="skills" class="py-16">
+      <h2 class="text-3xl font-bold text-center text-neutral-900">Skills Dashboard</h2>
+      <p class="mt-4 text-lg text-neutral-600 text-center max-w-3xl mx-auto">
+        Welcome. This portfolio demonstrates my expertise in bridging the gap between complex regulation and accessible, high-impact learning design. Below is an interactive dashboard of my core competencies. <br>
+        <strong class="text-indigo-600">Click any skill</strong> to see how I apply it, or <strong class="text-indigo-600">select a project</strong> to see the skills involved.
+      </p>
 
-            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="chart-container">
-                    <canvas id="skillsRadarChart"></canvas>
-                </div>
-                <div id="skill-display" class="bg-white p-8 rounded-lg shadow-lg h-full min-h-[400px]">
-                    <h3 id="skill-title" class="text-2xl font-semibold text-indigo-600">Select a Skill</h3>
-                    <p id="skill-description" class="mt-4 text-neutral-600">
-                        Click on any of the 12 skill cards below to see a detailed description here, and to highlight the projects where that skill was applied.
-                    </p>
-                </div>
-            </div>
-
-            <div class="mt-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                <button data-skill="regulatory-analysis" class="skill-card p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:scale-105 text-center font-medium text-neutral-700 hover:text-indigo-600">Regulatory Analysis</button>
-                <button data-skill="policy-development" class="skill-card p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:scale-105 text-center font-medium text-neutral-700 hover:text-indigo-600">Strategic Policy Development</button>
-                <button data-skill="assessment-integrity" class="skill-card p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:scale-105 text-center font-medium text-neutral-700 hover:text-indigo-600">Assessment Integrity & Validation</button>
-                <button data-skill="change-management" class="skill-card p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:scale-105 text-center font-medium text-neutral-700 hover:text-indigo-600">Change Management Readiness</button>
-                <button data-skill="content-mapping" class="skill-card p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:scale-105 text-center font-medium text-neutral-700 hover:text-indigo-600">Content Mapping to Standards</button>
-                <button data-skill="whs-compliance" class="skill-card p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:scale-105 text-center font-medium text-neutral-700 hover:text-indigo-600">WHS Legislative Compliance</button>
-                <button data-skill="risk-methodology" class="skill-card p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:scale-105 text-center font-medium text-neutral-700 hover:text-indigo-600">Risk Management Methodology</button>
-                <button data-skill="visual-communication" class="skill-card p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:scale-105 text-center font-medium text-neutral-700 hover:text-indigo-600">Visual Communication</button>
-                <button data-skill="contextualisation" class="skill-card p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:scale-105 text-center font-medium text-neutral-700 hover:text-indigo-600">Contextualisation of National Unit</button>
-                <button data-skill="harm-minimisation" class="skill-card p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:scale-105 text-center font-medium text-neutral-700 hover:text-indigo-600">Harm Minimisation Strategy</button>
-                <button data-skill="refusal-technique" class="skill-card p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:scale-105 text-center font-medium text-neutral-700 hover:text-indigo-600">Legal & Professional Refusal</button>
-                <button data-skill="emerging-risk" class="skill-card p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:scale-105 text-center font-medium text-neutral-700 hover:text-indigo-600">Emerging Risk Inclusion</button>
-            </div>
-        </section>
-
-        <div class="border-b border-neutral-200 my-12"></div>
-
-        <section id="projects" class="py-16">
-            <h2 class="text-3xl font-bold text-center text-neutral-900">Case Studies</h2>
-            <p class="mt-4 text-lg text-neutral-600 text-center max-w-3xl mx-auto">
-                My work is defined by a rigorous, solutions-focused approach. The projects below showcase how I've translated complex compliance needs into effective learning and policy. <br>
-                <strong class="text-indigo-600">Select a project</strong> to explore the challenge, process, and outcomes.
-            </p>
-            
-            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-                <button data-project="vet-reg" class="project-card p-6 bg-white rounded-lg shadow-lg border-4 border-transparent hover:border-indigo-500 hover:scale-105 text-left">
-                    <h3 class="text-xl font-semibold text-neutral-900">Translating VET Regulation</h3>
-                    <p class="mt-2 text-neutral-600">A policy guide on Reasonable Adjustment & the ASQA 2025 Standards.</p>
-                    <span class="mt-4 inline-block text-indigo-600 font-medium">View Project →</span>
-                </button>
-                <button data-project="whs" class="project-card p-6 bg-white rounded-lg shadow-lg border-4 border-transparent hover:border-indigo-500 hover:scale-105 text-left">
-                    <h3 class="text-xl font-semibold text-neutral-900">High-Stakes WHS Content</h3>
-                    <p class="mt-2 text-neutral-600">Developing the 'White Card' (CPCWHS1001) Learner Guide for construction.</p>
-                    <span class="mt-4 inline-block text-indigo-600 font-medium">View Project →</span>
-                </button>
-                <button data-project="rsa" class="project-card p-6 bg-white rounded-lg shadow-lg border-4 border-transparent hover:border-indigo-500 hover:scale-105 text-left">
-                    <h3 class="text-xl font-semibold text-neutral-900">Contextualised RSA Training</h3>
-                    <p class="mt-2 text-neutral-600">Adapting SITHFAB021 for NSW compliance, including emerging risks.</p>
-                    <span class="mt-4 inline-block text-indigo-600 font-medium">View Project →</span>
-                </button>
-            </div>
-
-            <div id="project-display-area" class="mt-16 bg-white rounded-lg shadow-xl overflow-hidden min-h-[500px] p-8 sm:p-12">
-                <p class="text-xl text-center text-neutral-500 pt-24">Please select a project from above to view the details.</p>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="mt-24 bg-neutral-100 border-t border-neutral-200 py-8">
-        <div class="container mx-auto text-center text-neutral-500 text-sm">
-            <p>&copy; 2025 | Interactive portfolio SPA created by analyzing source documents.</p>
-            <p>This is a demonstration of data architecture and frontend design.</p>
+      <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="chart-container"><canvas id="skillsRadarChart"></canvas></div>
+        <div id="skill-display" class="bg-white p-8 rounded-lg shadow-lg h-full min-h-[400px]">
+          <h3 id="skill-title" class="text-2xl font-semibold text-indigo-600">Select a Skill</h3>
+          <p id="skill-description" class="mt-4 text-neutral-600">
+            Click on any of the 12 skill cards below to see a detailed description here, and to highlight the projects where that skill was applied.
+          </p>
         </div>
-    </footer>
+      </div>
 
-    <script>
-        const skillsData = {
-            'regulatory-analysis': {
-                title: 'Regulatory Analysis',
-                description: 'Systematically analysing and deconstructing complex legislation (e.g., DDA, DSE, ASQA 2025 Standards) to define clear compliance requirements and actionable frameworks for RTOs.',
-                projects: ['vet-reg']
-            },
-            'policy-development': {
-                title: 'Strategic Policy Development',
-                description: 'Authoring comprehensive policy and compliance guides that translate legal obligations into practical, embedded processes for training organisations.',
-                projects: ['vet-reg']
-            },
-            'assessment-integrity': {
-                title: 'Assessment Integrity & Validation',
-                description: 'Designing frameworks that ensure assessment validity and reliability are maintained while upholding legal obligations for fairness and flexibility (Reasonable Adjustment).',
-                projects: ['vet-reg']
-            },
-            'change-management': {
-                title: 'Change Management Readiness',
-                description: 'Preparing organisations for major regulatory shifts (like ASQA 2025) by creating tools and guides that manage transition and mitigate compliance risk.',
-                projects: ['vet-reg']
-            },
-            'content-mapping': {
-                title: 'Content Mapping to National Standards',
-                description: 'Developing training content that is meticulously mapped to every element, performance criteria, and knowledge evidence of a national Unit of Competency (e.g., CPCWHS1001).',
-                projects: ['whs']
-            },
-            'whs-compliance': {
-                title: 'WHS Legislative Compliance',
-                description: 'Codifying complex national and state WHS Acts and Regulations (including PCBU and Worker Duty of Care) into accessible, site-ready learning content.',
-                projects: ['whs']
-            },
-            'risk-methodology': {
-                title: 'Risk Management Methodology',
-                description: 'Embedding core safety methodologies (Hazard vs. Risk, Risk Analysis Matrix, Hierarchy of Control) into learning materials to build decision-making skills.',
-                projects: ['whs']
-            },
-            'visual-communication': {
-                title: 'Visual Communication',
-                description: 'Using visual elements, such as signage charts and equipment photos, to reinforce critical information and cater to diverse learners in high-hazard contexts.',
-                projects: ['whs']
-            },
-            'contextualisation': {
-                title: 'Contextualisation of National Unit',
-                description: 'Adapting a national unit (SITHFAB021) to the specific, and stricter, legal requirements of a state jurisdiction (NSW Liquor Act 2007).',
-                projects: ['rsa']
-            },
-            'harm-minimisation': {
-                title: 'Harm Minimisation Strategy Design',
-                description: 'Creating actionable, early-intervention strategies for front-line staff (e.g., monitoring standard drinks, identifying erratic patterns) to prevent harm.',
-                projects: ['rsa']
-            },
-            'refusal-technique': {
-                title: 'Legal & Professional Refusal Technique',
-                description: 'Developing content for conflict de-escalation, providing staff with compliant, non-confrontational communication techniques for refusing service.',
-                projects: ['rsa']
-            },
-            'emerging-risk': {
-                description: 'Proactively integrating new mandatory training components (e.g., sexual harassment, drink spiking) into existing compliance frameworks.',
-                projects: ['rsa']
-            }
-        };
+      <div class="mt-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        <button data-skill="regulatory-analysis" class="skill-card p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:scale-105 text-center font-medium text-neutral-700 hover:text-indigo-600">Regulatory Analysis</button>
+        <button data-skill="policy-development" class="skill-card p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:scale-105 text-center font-medium text-neutral-700 hover:text-indigo-600">Strategic Policy Development</button>
+        <button data-skill="assessment-integrity" class="skill-card p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:scale-105 text-center font-medium text-neutral-700 hover:text-indigo-600">Assessment Integrity & Validation</button>
+        <button data-skill="change-management" class="skill-card p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:scale-105 text-center font-medium text-neutral-700 hover:text-indigo-600">Change Management Readiness</button>
+        <button data-skill="content-mapping" class="skill-card p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:scale-105 text-center font-medium text-neutral-700 hover:text-indigo-600">Content Mapping to Standards</button>
+        <button data-skill="whs-compliance" class="skill-card p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:scale-105 text-center font-medium text-neutral-700 hover:text-indigo-600">WHS Legislative Compliance</button>
+        <button data-skill="risk-methodology" class="skill-card p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:scale-105 text-center font-medium text-neutral-700 hover:text-indigo-600">Risk Management Methodology</button>
+        <button data-skill="visual-communication" class="skill-card p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:scale-105 text-center font-medium text-neutral-700 hover:text-indigo-600">Visual Communication</button>
+        <button data-skill="contextualisation" class="skill-card p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:scale-105 text-center font-medium text-neutral-700 hover:text-indigo-600">Contextualisation of National Unit</button>
+        <button data-skill="harm-minimisation" class="skill-card p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:scale-105 text-center font-medium text-neutral-700 hover:text-indigo-600">Harm Minimisation Strategy</button>
+        <button data-skill="refusal-technique" class="skill-card p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:scale-105 text-center font-medium text-neutral-700 hover:text-indigo-600">Legal & Professional Refusal</button>
+        <button data-skill="emerging-risk" class="skill-card p-4 bg-white rounded-lg shadow-md hover:shadow-xl hover:scale-105 text-center font-medium text-neutral-700 hover:text-indigo-600">Emerging Risk Inclusion</button>
+      </div>
+    </section>
 
-        const projectsData = {
-            'vet-reg': {
-                title: 'Case Study 1: Translating VET Regulation into Policy & Practice',
-                skills: ['regulatory-analysis', 'policy-development', 'assessment-integrity', 'change-management'],
-                img: './images/Screenshot 2025-11-08 at 17.45.16.png',
-                html: `<h3 class="text-3xl font-bold text-neutral-900">Translating VET Regulation into Policy & Practice</h3>
-                    <p class="mt-2 text-lg text-indigo-600 font-medium">Navigating Reasonable Adjustment in Australian VET Assessments</p>
-                    <div class="mt-8">
-                        <h4 class="text-2xl font-semibold text-neutral-800">1. The Challenge (Problem)</h4>
-                        <p class="mt-3 text-neutral-600">With the Australian Skills Quality Authority (ASQA) shifting to an <strong>outcomes-based regulatory model in July 2025</strong>, Registered Training Organisations (RTOs) required critical guidance to transition their reasonable adjustment (RA) practices from reactive compliance to proactive, embedded quality standards. The challenge was ensuring assessment integrity (Validity and Reliability) while maintaining the legal obligation of Fairness and Flexibility for learners with disabilities.</p>
-                    </div>
-                    <div class="mt-8">
-                        <h4 class="text-2xl font-semibold text-neutral-800">2. The Solution & Process (Design)</h4>
-                        <p class="mt-3 text-neutral-600">A comprehensive policy and compliance guide was developed through intensive legislative research and structural design:</p>
-                        <ul class="mt-4 list-disc list-inside space-y-2 text-neutral-600">
-                            <li><strong>Deconstruction of Law:</strong> Systematically analysed the <em>Disability Discrimination Act 1992 (Cth)</em>, the <em>Disability Standards for Education 2005 (DSE)</em>, and the proposed ASQA 2025 Outcome and Compliance Standards.</li>
-                            <li><strong>Process Modeling:</strong> Established a multi-stakeholder framework for RA implementation, emphasising <strong>Learner-Centred Disclosure and Consultation</strong>, and defining clear responsibilities for RTOs, assessors, and support staff.</li>
-                            <li><strong>Practical Translation:</strong> Created practical models (Tables 3 & 4 from the report) detailing appropriate adjustments for both knowledge and practical VET assessments (e.g., in Nursing and Security Operations).</li>
-                            <li><strong>Quality Assurance Integration:</strong> Strategically linked the successful application of RA to the RTO's overall <strong>Validation and Continuous Improvement</strong> framework.</li>
-                        </ul>
-                    </div>
-                    <div class="mt-8">
-                        <h4 class="text-2xl font-semibold text-neutral-800">3. The Outcome & Impact</h4>
-                        <p class="mt-3 text-neutral-600">The resulting 25-page guide served as a critical tool for RTO readiness, elevating Reasonable Adjustment from a standalone policy to an embedded component of the Training and Assessment Strategy. It provided actionable, defensible guidance, directly mitigating regulatory risk while fulfilling the ethical mandate for equitable learner access and positive outcomes under the new VET quality framework.</p>
-                    </div>`
-            },
-            'whs': {
-                title: 'Case Study 2: High-Stakes Compliance Content Development (WHS)',
-                skills: ['content-mapping', 'whs-compliance', 'risk-methodology', 'visual-communication'],
-                img: './images/Screenshot 2025-11-08 at 17.43.17.png',
-                html: `<h3 class="text-3xl font-bold text-neutral-900">High-Stakes Compliance Content Development (WHS)</h3>
-                    <p class="mt-2 text-lg text-indigo-600 font-medium">General Construction Induction Training (White Card) Content - CPCWHS1001</p>
-                    <div class="mt-8">
-                        <h4 class="text-2xl font-semibold text-neutral-800">1. The Challenge (Problem)</h4>
-                        <p class="mt-3 text-neutral-600">The national White Card training (<code>CPCWHS1001</code>) is a mandated, high-risk entry requirement for Australian construction sites. The content needed to be rigorously compliant with WHS Acts and Regulations across all jurisdictions, while remaining accessible, practical, and engaging for diverse learners entering a physically demanding, high-hazard industry.</p>
-                    </div>
-                    <div class="mt-8">
-                        <h4 class="text-2xl font-semibold text-neutral-800">2. The Solution & Process (Design)</h4>
-                        <p class="mt-3 text-neutral-600">A detailed Learner Guide was developed to meet all WHS legislative and unit requirements:</p>
-                        <ul class="mt-4 list-disc list-inside space-y-2 text-neutral-600">
-                            <li><strong>Structure & Flow:</strong> The unit content was logically chunked into four core sections: Legislative Requirements, Hazard Identification/Risk Control, Communication/Reporting, and Incident/Emergency Response.</li>
-                            <li><strong>Risk Management Focus:</strong> Dedicated sections were created to embed core safety concepts: defining <strong>Hazard vs. Risk</strong>, illustrating the <strong>Risk Analysis Matrix</strong> for assessment, and detailing the <strong>Hierarchy of Hazard Control</strong> (Elimination to PPE) as the primary decision-making tool.</li>
-                            <li><strong>Safe Work Practices:</strong> Content covered site-specific safe practices including <strong>Housekeeping, Material Storage, Plant/Equipment Licensing</strong>, and non-physical hazards like <strong>Bullying and Harassment</strong>.</li>
-                            <li><strong>Assessment Tools:</strong> Included a Safe Work Method Statement (<strong>SWMS</strong>) template and Incident Record, providing learners with the industry-mandated documentation tools required for high-risk work compliance.</li>
-                        </ul>
-                    </div>
-                    <div class="mt-8">
-                        <h4 class="text-2xl font-semibold text-neutral-800">3. The Outcome & Impact</h4>
-                        <p class="mt-3 text-neutral-600">The guide successfully codified complex national WHS legislation into an actionable, site-ready resource. The clear instructional design ensures new workers understand their <strong>Duty of Care</strong> and can proactively implement the <strong>Hierarchy of Hazard Control</strong>, significantly contributing to a culture of safety compliance and mitigating employer (PCBU) liability.</p>
-                    </div>`
-            },
-            'rsa': {
-                title: 'Case Study 3: Contextualised Regulatory Training (Hospitality/RSA)',
-                skills: ['contextualisation', 'harm-minimisation', 'refusal-technique', 'emerging-risk'],
-                img: './images/Screenshot 2025-11-08 at 17.41.17.png',
-                html: `<h3 class="text-3xl font-bold text-neutral-900">Contextualised Regulatory Training (Hospitality/RSA)</h3>
-                    <p class="mt-2 text-lg text-indigo-600 font-medium">Responsible Service of Alcohol (RSA) Training for NSW Compliance - SITHFAB021</p>
-                    <div class="mt-8">
-                        <h4 class="text-2xl font-semibold text-neutral-800">1. The Challenge (Problem)</h4>
-                        <p class="mt-3 text-neutral-600">Delivering the nationally recognised <code>SITHFAB021</code> unit required strict contextualisation to the specific Liquor Licensing Legislation in <strong>New South Wales (NSW)</strong>, including the Liquor Act 2007. The key challenge was developing content that was practical for staff dealing with real-time intoxication, minors, and modern risks like drink spiking and sexual harassment, which were incorporated into the 2025 compliance standards.</p>
-                    </div>
-                    <div class="mt-8">
-                        <h4 class="text-2xl font-semibold text-neutral-800">2. The Solution & Process (Design)</h4>
-                        <p class="mt-3 text-neutral-600">The learner guide was structured as a practical manual for compliance and professional intervention:</p>
-                        <ul class="mt-4 list-disc list-inside space-y-2 text-neutral-600">
-                            <li><strong>NSW Legislative Focus:</strong> Clearly differentiated national standards from the unique NSW requirements (e.g., the NSW Photo Competency Card, state-specific penalties, and the legal definition of <strong>"Intoxicated"</strong> based on observable signs).</li>
-                            <li><strong>Harm Minimisation Techniques:</strong> Provided staff with actionable, early intervention strategies, such as offering food/non-alcoholic drinks, monitoring <strong>Standard Drinks</strong> consumption, and recognising <strong>Erratic Drinking Patterns</strong>.</li>
-                            <li><strong>Conflict De-escalation:</strong> Dedicated content to <strong>Refusing Service</strong>, detailing professional, non-confrontational communication techniques (e.g., keeping calm, blaming the "law," and offering safe transport assistance).</li>
-                            <li><strong>New Risk Integration:</strong> Proactively addressed new mandatory training components including <strong>Preventing Sexual Harassment, Violence, and Drink Spiking</strong>, positioning staff as front-line enforcers of safety and consent culture.</li>
-                        </ul>
-                    </div>
-                    <div class="mt-8">
-                        <h4 class="text-2xl font-semibold text-neutral-800">3. The Outcome & Impact</h4>
-                        <p class="mt-3 text-neutral-600">The content produced a highly contextualised, compliance-focused training guide. It equipped front-line staff with the legal knowledge and practical intervention skills required to uphold the licensee's <strong>Duty of Care</strong>, prevent breaches (especially concerning minors and secondary supply), and manage challenging situations in line with the highest NSW public safety and regulatory expectations.</p>
-                    </div>`
-            }
-        };
+    <div class="border-b border-neutral-200 my-12"></div>
 
-        let activeSkill = null;
-        let activeProject = null;
+    <section id="projects" class="py-16">
+      <h2 class="text-3xl font-bold text-center text-neutral-900">Case Studies</h2>
+      <p class="mt-4 text-lg text-neutral-600 text-center max-w-3xl mx-auto">
+        My work is defined by a rigorous, solutions-focused approach. The projects below showcase how I've translated complex compliance needs into effective learning and policy. <br>
+        <strong class="text-indigo-600">Select a project</strong> to explore the challenge, process, and outcomes.
+      </p>
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const skillCards = document.querySelectorAll('[data-skill]');
-            const projectCards = document.querySelectorAll('[data-project]');
-            const navLinks = document.querySelectorAll('.nav-link');
-            const sections = document.querySelectorAll('section');
+      <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <button data-project="vet-reg" class="project-card p-6 bg-white rounded-lg shadow-lg border-4 border-transparent hover:border-indigo-500 hover:scale-105 text-left">
+          <h3 class="text-xl font-semibold text-neutral-900">Translating VET Regulation</h3>
+          <p class="mt-2 text-neutral-600">A policy guide on Reasonable Adjustment & the ASQA 2025 Standards.</p>
+          <span class="mt-4 inline-block text-indigo-600 font-medium">View Project →</span>
+        </button>
+        <button data-project="whs" class="project-card p-6 bg-white rounded-lg shadow-lg border-4 border-transparent hover:border-indigo-500 hover:scale-105 text-left">
+          <h3 class="text-xl font-semibold text-neutral-900">High-Stakes WHS Content</h3>
+          <p class="mt-2 text-neutral-600">Developing the 'White Card' (CPCWHS1001) Learner Guide for construction.</p>
+          <span class="mt-4 inline-block text-indigo-600 font-medium">View Project →</span>
+        </button>
+        <button data-project="rsa" class="project-card p-6 bg-white rounded-lg shadow-lg border-4 border-transparent hover:border-indigo-500 hover:scale-105 text-left">
+          <h3 class="text-xl font-semibold text-neutral-900">Contextualised RSA Training</h3>
+          <p class="mt-2 text-neutral-600">Adapting SITHFAB021 for NSW compliance, including emerging risks.</p>
+          <span class="mt-4 inline-block text-indigo-600 font-medium">View Project →</span>
+        </button>
+      </div>
 
-            skillCards.forEach(card => { card.addEventListener('click', handleSkillClick); });
-            projectCards.forEach(card => { card.addEventListener('click', handleProjectClick); });
+      <div id="project-display-area" class="mt-16 bg-white rounded-lg shadow-xl overflow-hidden min-h-[500px] p-8 sm:p-12">
+        <p class="text-xl text-center text-neutral-500 pt-24">Please select a project from above to view the details.</p>
+      </div>
+    </section>
 
-            function handleSkillClick(e) {
-                const skillId = e.currentTarget.dataset.skill;
-                clearHighlights();
-                activeSkill = skillId;
-                e.currentTarget.classList.add('skill-highlight');
-                updateSkillInfo(skillId);
-                highlightProjects(skillId);
-            }
+  </main>
 
-            function handleProjectClick(e) {
-                const projectId = e.currentTarget.dataset.project;
-                clearHighlights();
-                activeProject = projectId;
-                e.currentTarget.classList.add('project-highlight');
-                displayProject(projectId);
-                highlightSkills(projectId);
-                document.getElementById('project-display-area').scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+  <footer class="mt-24 bg-neutral-100 border-t border-neutral-200 py-8">
+    <div class="container mx-auto text-center text-neutral-500 text-sm">
+      <p>&copy; 2025 | Interactive portfolio SPA created by analyzing source documents.</p>
+      <p>This is a demonstration of data architecture and frontend design.</p>
+    </div>
+  </footer>
 
-            function updateSkillInfo(skillId) {
-                const skill = skillsData[skillId];
-                document.getElementById('skill-title').textContent = skill.title || 'Skill';
-                document.getElementById('skill-description').textContent = skill.description || '';
-            }
+  <script>
+    const skillsData = {
+      'regulatory-analysis':{title:'Regulatory Analysis',description:'Systematically analysing and deconstructing complex legislation (e.g., DDA, DSE, ASQA 2025 Standards) to define clear compliance requirements and actionable frameworks for RTOs.',projects:['vet-reg']},
+      'policy-development':{title:'Strategic Policy Development',description:'Authoring comprehensive policy and compliance guides that translate legal obligations into practical, embedded processes for training organisations.',projects:['vet-reg']},
+      'assessment-integrity':{title:'Assessment Integrity & Validation',description:'Designing frameworks that ensure assessment validity and reliability are maintained while upholding legal obligations for fairness and flexibility (Reasonable Adjustment).',projects:['vet-reg']},
+      'change-management':{title:'Change Management Readiness',description:'Preparing organisations for major regulatory shifts (like ASQA 2025) by creating tools and guides that manage transition and mitigate compliance risk.',projects:['vet-reg']},
+      'content-mapping':{title:'Content Mapping to National Standards',description:'Developing training content that is meticulously mapped to every element, performance criteria, and knowledge evidence of a national Unit of Competency (e.g., CPCWHS1001).',projects:['whs']},
+      'whs-compliance':{title:'WHS Legislative Compliance',description:'Codifying complex national and state WHS Acts and Regulations (including PCBU and Worker Duty of Care) into accessible, site-ready learning content.',projects:['whs']},
+      'risk-methodology':{title:'Risk Management Methodology',description:'Embedding core safety methodologies (Hazard vs. Risk, Risk Analysis Matrix, Hierarchy of Control) into learning materials to build decision-making skills.',projects:['whs']},
+      'visual-communication':{title:'Visual Communication',description:'Using visual elements, such as signage charts and equipment photos, to reinforce critical information and cater to diverse learners in high-hazard contexts.',projects:['whs']},
+      'contextualisation':{title:'Contextualisation of National Unit',description:'Adapting a national unit (SITHFAB021) to the specific, and stricter, legal requirements of a state jurisdiction (NSW Liquor Act 2007).',projects:['rsa']},
+      'harm-minimisation':{title:'Harm Minimisation Strategy Design',description:'Creating actionable, early-intervention strategies for front-line staff (e.g., monitoring standard drinks, identifying erratic patterns) to prevent harm.',projects:['rsa']},
+      'refusal-technique':{title:'Legal & Professional Refusal Technique',description:'Developing content for conflict de-escalation, providing staff with compliant, non-confrontational communication techniques for refusing service.',projects:['rsa']},
+      'emerging-risk':{description:'Proactively integrating new mandatory training components (e.g., sexual harassment, drink spiking) into existing compliance frameworks.',projects:['rsa']}
+    };
 
-            function displayProject(projectId) {
-                const project = projectsData[projectId];
-                let imageHtml = project.img ? `<img src="${project.img}" alt="Visual Evidence for ${project.title}" class="w-full h-auto rounded-lg mb-8 shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/800x300/e5e5e5/737373?text=Image+Unavailable';">` : '';
-                document.getElementById('project-display-area').innerHTML = imageHtml + project.html;
-            }
+    const projectsData = {
+      'vet-reg':{
+        title:'Case Study 1: Translating VET Regulation into Policy & Practice',
+        skills:['regulatory-analysis','policy-development','assessment-integrity','change-management'],
+        img:'./images/Screenshot 2025-11-08 at 17.45.16.png',
+        html:`<h3 class="text-3xl font-bold text-neutral-900">Translating VET Regulation into Policy & Practice</h3>
+<p class="mt-2 text-lg text-indigo-600 font-medium">Navigating Reasonable Adjustment in Australian VET Assessments</p>
+<div class="mt-8"><h4 class="text-2xl font-semibold text-neutral-800">1. The Challenge (Problem)</h4>
+<p class="mt-3 text-neutral-600">With the Australian Skills Quality Authority (ASQA) shifting to an <strong>outcomes-based regulatory model in July 2025</strong>, Registered Training Organisations (RTOs) required critical guidance to transition their reasonable adjustment (RA) practices from reactive compliance to proactive, embedded quality standards. The challenge was ensuring assessment integrity (Validity and Reliability) while maintaining the legal obligation of Fairness and Flexibility for learners with disabilities.</p></div>
+<div class="mt-8"><h4 class="text-2xl font-semibold text-neutral-800">2. The Solution & Process (Design)</h4>
+<p class="mt-3 text-neutral-600">A comprehensive policy and compliance guide was developed through intensive legislative research and structural design:</p>
+<ul class="mt-4 list-disc list-inside space-y-2 text-neutral-600">
+<li><strong>Deconstruction of Law:</strong> Systematically analysed the <em>Disability Discrimination Act 1992 (Cth)</em>, the <em>Disability Standards for Education 2005 (DSE)</em>, and the proposed ASQA 2025 Outcome and Compliance Standards.</li>
+<li><strong>Process Modeling:</strong> Established a multi-stakeholder framework for RA implementation, emphasising <strong>Learner-Centred Disclosure and Consultation</strong>, and defining clear responsibilities for RTOs, assessors, and support staff.</li>
+<li><strong>Practical Translation:</strong> Created practical models (Tables 3 & 4 from the report) detailing appropriate adjustments for both knowledge and practical VET assessments (e.g., in Nursing and Security Operations).</li>
+<li><strong>Quality Assurance Integration:</strong> Strategically linked the successful application of RA to the RTO's overall <strong>Validation and Continuous Improvement</strong> framework.</li>
+</ul></div>
+<div class="mt-8"><h4 class="text-2xl font-semibold text-neutral-800">3. The Outcome & Impact</h4>
+<p class="mt-3 text-neutral-600">The resulting 25-page guide served as a critical tool for RTO readiness, elevating Reasonable Adjustment from a standalone policy to an embedded component of the Training and Assessment Strategy. It provided actionable, defensible guidance, directly mitigating regulatory risk while fulfilling the ethical mandate for equitable learner access and positive outcomes under the new VET quality framework.</p></div>`
+      },
+      'whs':{
+        title:'Case Study 2: High-Stakes Compliance Content Development (WHS)',
+        skills:['content-mapping','whs-compliance','risk-methodology','visual-communication'],
+        img:'./images/Screenshot 2025-11-08 at 17.43.17.png',
+        html:`<h3 class="text-3xl font-bold text-neutral-900">High-Stakes Compliance Content Development (WHS)</h3>
+<p class="mt-2 text-lg text-indigo-600 font-medium">General Construction Induction Training (White Card) Content - CPCWHS1001</p>
+<div class="mt-8"><h4 class="text-2xl font-semibold text-neutral-800">1. The Challenge (Problem)</h4>
+<p class="mt-3 text-neutral-600">The national White Card training (<code>CPCWHS1001</code>) is a mandated, high-risk entry requirement for Australian construction sites. The content needed to be rigorously compliant with WHS Acts and Regulations across all jurisdictions, while remaining accessible, practical, and engaging for diverse learners entering a physically demanding, high-hazard industry.</p></div>
+<div class="mt-8"><h4 class="text-2xl font-semibold text-neutral-800">2. The Solution & Process (Design)</h4>
+<p class="mt-3 text-neutral-600">A detailed Learner Guide was developed to meet all WHS legislative and unit requirements:</p>
+<ul class="mt-4 list-disc list-inside space-y-2 text-neutral-600">
+<li><strong>Structure & Flow:</strong> The unit content was logically chunked into four core sections: Legislative Requirements, Hazard Identification/Risk Control, Communication/Reporting, and Incident/Emergency Response.</li>
+<li><strong>Risk Management Focus:</strong> Dedicated sections were created to embed core safety concepts: defining <strong>Hazard vs. Risk</strong>, illustrating the <strong>Risk Analysis Matrix</strong> for assessment, and detailing the <strong>Hierarchy of Hazard Control</strong> (Elimination to PPE) as the primary decision-making tool.</li>
+<li><strong>Safe Work Practices:</strong> Content covered site-specific safe practices including <strong>Housekeeping, Material Storage, Plant/Equipment Licensing</strong>, and non-physical hazards like <strong>Bullying and Harassment</strong>.</li>
+<li><strong>Assessment Tools:</strong> Included a Safe Work Method Statement (<strong>SWMS</strong>) template and Incident Record, providing learners with the industry-mandated documentation tools required for high-risk work compliance.</li>
+</ul></div>
+<div class="mt-8"><h4 class="text-2xl font-semibold text-neutral-800">3. The Outcome & Impact</h4>
+<p class="mt-3 text-neutral-600">The guide successfully codified complex national WHS legislation into an actionable, site-ready resource. The clear instructional design ensures new workers understand their <strong>Duty of Care</strong> and can proactively implement the <strong>Hierarchy of Hazard Control</strong>, significantly contributing to a culture of safety compliance and mitigating employer (PCBU) liability.</p></div>`
+      },
+      'rsa':{
+        title:'Case Study 3: Contextualised Regulatory Training (Hospitality/RSA)',
+        skills:['contextualisation','harm-minimisation','refusal-technique','emerging-risk'],
+        img:'./images/Screenshot 2025-11-08 at 17.41.17.png',
+        html:`<h3 class="text-3xl font-bold text-neutral-900">Contextualised Regulatory Training (Hospitality/RSA)</h3>
+<p class="mt-2 text-lg text-indigo-600 font-medium">Responsible Service of Alcohol (RSA) Training for NSW Compliance - SITHFAB021</p>
+<div class="mt-8"><h4 class="text-2xl font-semibold text-neutral-800">1. The Challenge (Problem)</h4>
+<p class="mt-3 text-neutral-600">Delivering the nationally recognised <code>SITHFAB021</code> unit required strict contextualisation to the specific Liquor Licensing Legislation in <strong>New South Wales (NSW)</strong>, including the Liquor Act 2007. The key challenge was developing content that was practical for staff dealing with real-time intoxication, minors, and modern risks like drink spiking and sexual harassment, which were incorporated into the 2025 compliance standards.</p></div>
+<div class="mt-8"><h4 class="text-2xl font-semibold text-neutral-800">2. The Solution & Process (Design)</h4>
+<p class="mt-3 text-neutral-600">The learner guide was structured as a practical manual for compliance and professional intervention:</p>
+<ul class="mt-4 list-disc list-inside space-y-2 text-neutral-600">
+<li><strong>NSW Legislative Focus:</strong> Clearly differentiated national standards from the unique NSW requirements (e.g., the NSW Photo Competency Card, state-specific penalties, and the legal definition of <strong>"Intoxicated"</strong> based on observable signs).</li>
+<li><strong>Harm Minimisation Techniques:</strong> Provided staff with actionable, early intervention strategies, such as offering food/non-alcoholic drinks, monitoring <strong>Standard Drinks</strong> consumption, and recognising <strong>Erratic Drinking Patterns</strong>.</li>
+<li><strong>Conflict De-escalation:</strong> Dedicated content to <strong>Refusing Service</strong>, detailing professional, non-confrontational communication techniques (e.g., keeping calm, blaming the "law," and offering safe transport assistance).</li>
+<li><strong>New Risk Integration:</strong> Proactively addressed new mandatory training components including <strong>Preventing Sexual Harassment, Violence, and Drink Spiking</strong>, positioning staff as front-line enforcers of safety and consent culture.</li>
+</ul></div>
+<div class="mt-8"><h4 class="text-2xl font-semibold text-neutral-800">3. The Outcome & Impact</h4>
+<p class="mt-3 text-neutral-600">The content produced a highly contextualised, compliance-focused training guide. It equipped front-line staff with the legal knowledge and practical intervention skills required to uphold the licensee's <strong>Duty of Care</strong>, prevent breaches (especially concerning minors and secondary supply), and manage challenging situations in line with the highest NSW public safety and regulatory expectations.</p></div>`
+      }
+    };
 
-            function highlightProjects(skillId) {
-                const relatedProjects = skillsData[skillId].projects || [];
-                projectCards.forEach(card => { if (relatedProjects.includes(card.dataset.project)) card.classList.add('project-highlight'); });
-            }
+    let activeSkill=null, activeProject=null;
 
-            function highlightSkills(projectId) {
-                const relatedSkills = projectsData[projectId].skills || [];
-                skillCards.forEach(card => { if (relatedSkills.includes(card.dataset.skill)) card.classList.add('skill-highlight'); });
-            }
+    document.addEventListener('DOMContentLoaded',()=>{
+      const skillCards=document.querySelectorAll('[data-skill]');
+      const projectCards=document.querySelectorAll('[data-project]');
+      const navLinks=document.querySelectorAll('.nav-link');
+      const sections=document.querySelectorAll('section');
 
-            function clearHighlights() {
-                document.querySelectorAll('.skill-highlight').forEach(el => el.classList.remove('skill-highlight'));
-                document.querySelectorAll('.project-highlight').forEach(el => el.classList.remove('project-highlight'));
-                activeSkill = null; activeProject = null;
-            }
+      skillCards.forEach(c=>c.addEventListener('click',handleSkillClick));
+      projectCards.forEach(c=>c.addEventListener('click',handleProjectClick));
 
-            const radarCtx = document.getElementById('skillsRadarChart').getContext('2d');
-            new Chart(radarCtx, {
-                type: 'radar',
-                data: { labels: ['Regulatory Analysis & Compliance','Instructional Design & Strategy','Process & Risk Methodology'],
-                        datasets: [{ label: 'Core Expertise', data: [4,4,4], fill: true,
-                                     backgroundColor: 'rgba(99, 102, 241, 0.2)', borderColor: 'rgb(99, 102, 241)',
-                                     pointBackgroundColor: 'rgb(99, 102, 241)', pointBorderColor: '#fff',
-                                     pointHoverBackgroundColor: '#fff', pointHoverBorderColor: 'rgb(99, 102, 241)'}]},
-                options: { maintainAspectRatio: false,
-                    scales: { r: { angleLines: { color: '#e5e5e5' }, grid: { color: '#e5e5e5' },
-                                    pointLabels: { font: { size: 13, weight: '500' }, color: '#404040' },
-                                    ticks: { backdropColor: '#f5f5f5', color: '#737373', stepSize: 1, display: false },
-                                    suggestedMin: 0, suggestedMax: 5 } },
-                    plugins: { legend: { display: false }, tooltip: { enabled: false } } }
-            });
+      function handleSkillClick(e){
+        const id=e.currentTarget.dataset.skill; clearHighlights(); activeSkill=id;
+        e.currentTarget.classList.add('skill-highlight'); updateSkillInfo(id); highlightProjects(id);
+      }
+      function handleProjectClick(e){
+        const id=e.currentTarget.dataset.project; clearHighlights(); activeProject=id;
+        e.currentTarget.classList.add('project-highlight'); displayProject(id); highlightSkills(id);
+        document.getElementById('project-display-area').scrollIntoView({behavior:'smooth',block:'start'});
+      }
+      function updateSkillInfo(id){
+        const s=skillsData[id]||{};
+        document.getElementById('skill-title').textContent=s.title||'Skill';
+        document.getElementById('skill-description').textContent=s.description||'';
+      }
+      function displayProject(id){
+        const p=projectsData[id]||{};
+        const img=p.img?`<img src="${p.img}" alt="Visual Evidence for ${p.title}" class="w-full h-auto rounded-lg mb-8 shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/800x300/e5e5e5/737373?text=Image+Unavailable';">`:'';
+        document.getElementById('project-display-area').innerHTML=img+(p.html||'');
+      }
+      function highlightProjects(id){
+        const related=skillsData[id]?.projects||[];
+        projectCards.forEach(c=>{ if(related.includes(c.dataset.project)) c.classList.add('project-highlight'); });
+      }
+      function highlightSkills(id){
+        const related=projectsData[id]?.skills||[];
+        skillCards.forEach(c=>{ if(related.includes(c.dataset.skill)) c.classList.add('skill-highlight'); });
+      }
+      function clearHighlights(){
+        document.querySelectorAll('.skill-highlight').forEach(el=>el.classList.remove('skill-highlight'));
+        document.querySelectorAll('.project-highlight').forEach(el=>el.classList.remove('project-highlight'));
+        activeSkill=null; activeProject=null;
+      }
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        navLinks.forEach(link => { link.classList.toggle('nav-active', link.dataset.navSection === entry.target.id); });
-                    }
-                });
-            }, { rootMargin: '-20% 0px -70% 0px', threshold: 0.1 });
+      const ctx=document.getElementById('skillsRadarChart').getContext('2d');
+      new Chart(ctx,{type:'radar',
+        data:{labels:['Regulatory Analysis & Compliance','Instructional Design & Strategy','Process & Risk Methodology'],
+              datasets:[{label:'Core Expertise',data:[4,4,4],fill:true,backgroundColor:'rgba(99,102,241,.2)',borderColor:'rgb(99,102,241)',pointBackgroundColor:'rgb(99,102,241)',pointBorderColor:'#fff',pointHoverBackgroundColor:'#fff',pointHoverBorderColor:'rgb(99,102,241)'}]},
+        options:{maintainAspectRatio:false,scales:{r:{angleLines:{color:'#e5e5e5'},grid:{color:'#e5e5e5'},pointLabels:{font:{size:13,weight:'500'},color:'#404040'},ticks:{backdropColor:'#f5f5f5',color:'#737373',stepSize:1,display:false},suggestedMin:0,suggestedMax:5}},plugins:{legend:{display:false},tooltip:{enabled:false}}}
+      });
 
-            sections.forEach(section => { observer.observe(section); });
-        });
-    </script>
+      const observer=new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{ if(entry.isIntersecting){ navLinks.forEach(link=>{ link.classList.toggle('nav-active', link.dataset.navSection===entry.target.id); }); } });
+      },{rootMargin:'-20% 0px -70% 0px',threshold:0.1});
+      sections.forEach(s=>observer.observe(s));
+    });
+  </script>
 </body>
 </html>
