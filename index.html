@@ -171,7 +171,7 @@
     h1 {
       max-width: 820px;
       margin-bottom: 1rem;
-      font-size: clamp(2.2rem, 3.8vw, 3.7rem);
+      font-size: clamp(2rem, 3.2vw, 3.15rem);
       line-height: 1.05;
       letter-spacing: 0;
     }
@@ -264,7 +264,7 @@
 
     .capability-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 1rem;
     }
 
@@ -287,6 +287,10 @@
 
     .capability:nth-child(4) {
       border-top-color: var(--plum);
+    }
+
+    .capability:nth-child(5) {
+      border-top-color: var(--green);
     }
 
     .capability h3 {
@@ -402,6 +406,28 @@
     .scan-item span {
       color: var(--muted);
       font-size: 0.9rem;
+    }
+
+    .example-evidence {
+      margin-top: 1rem;
+      padding: 0.95rem 1rem;
+      border: 1px solid #d8e3ea;
+      border-radius: 8px;
+      background: #fbfcfd;
+    }
+
+    .example-evidence h4 {
+      margin: 0 0 0.45rem;
+      font-size: 0.96rem;
+    }
+
+    .example-evidence ul {
+      display: grid;
+      gap: 0.35rem;
+      margin: 0;
+      padding-left: 1.1rem;
+      color: #435467;
+      font-size: 0.92rem;
     }
 
     .ai-layout {
@@ -590,13 +616,13 @@
     <section id="home" class="section hero">
       <div class="wrap hero-grid">
         <div>
-          <p class="eyebrow">University-facing learning design portfolio</p>
+          <p class="eyebrow">Learning and Design Portfolio</p>
           <h1>Learning Design | Curriculum &amp; Assessment | Digital Learning | AI-Enabled Learning</h1>
           <p class="lead">I design practical, evidence-informed learning experiences across higher education, vocational education and workforce capability. My work combines curriculum design, authentic assessment, active learning, digital tools and responsible use of AI.</p>
           <div class="hero-actions">
             <a class="button" href="#work">View Case Studies</a>
             <a class="button secondary" href="mailto:dlowe.learningdesign@gmail.com">Email Damien</a>
-            <a class="button secondary" href="https://www.linkedin.com/in/damien-lowe-phd/" target="_blank" rel="noreferrer">LinkedIn Profile</a>
+            <a class="button secondary" href="https://www.linkedin.com/in/damien-lowe-ld" target="_blank" rel="noreferrer">LinkedIn Profile</a>
           </div>
         </div>
         <aside class="hero-panel" aria-label="Portfolio strengths">
@@ -605,6 +631,7 @@
             <li>Higher education curriculum and learning activity design</li>
             <li>Constructive alignment across outcomes, assessment and teaching practice</li>
             <li>Simulation, experiential learning and applied workplace scenarios</li>
+            <li>LMS construction, maintenance and learner experience design</li>
             <li>AI-supported research, analytics awareness and responsible AI practice</li>
           </ul>
         </aside>
@@ -615,7 +642,7 @@
       <div class="wrap">
         <div class="section-heading">
           <h2>Capabilities</h2>
-          <p>A concise view of the professional capability areas most relevant to university learning design roles. The emphasis is on design judgement, learner experience and evidence of practice rather than self-rated scores.</p>
+          <p>A concise view of professional capability areas relevant across higher education, vocational education and workforce learning. The emphasis is on design judgement, learner experience and evidence of practice rather than self-rated scores.</p>
         </div>
         <div class="capability-grid">
           <article class="capability">
@@ -631,6 +658,10 @@
             <p>Using simulations, scenario-based learning, digital resources and interactive tasks to support authentic decision-making and workplace transfer.</p>
           </article>
           <article class="capability">
+            <h3>LMS Design &amp; Maintenance</h3>
+            <p>Constructing and maintaining organised learning environments, including module structure, resources, activity flow, accessibility checks and learner-facing navigation.</p>
+          </article>
+          <article class="capability">
             <h3>AI-Enabled Learning</h3>
             <p>Applying AI and analytics thoughtfully to research, design iteration, content development, evaluation and workflow improvement, with human judgement retained at key decision points.</p>
           </article>
@@ -642,7 +673,7 @@
       <div class="wrap">
         <div class="section-heading">
           <h2>Selected Work</h2>
-          <p>Each case study summarises context, design approach and evidence while avoiding publication of full proprietary resources. Screenshots are used as selected excerpts only.</p>
+          <p>Each case study summarises context, design approach and selected evidence while avoiding publication of full proprietary resources. Screenshots and sample design notes are used as excerpts only.</p>
         </div>
 
         <div class="case-study-list">
@@ -663,6 +694,14 @@
                 <div class="scan-item"><strong>Design problem</strong><span>Make technical planning concepts meaningful for hospitality and hotel management learners.</span></div>
                 <div class="scan-item"><strong>Design response</strong><span>Use guided analysis, design prompts, industry examples and assessment-linked activities.</span></div>
                 <div class="scan-item"><strong>Evidence of capability</strong><span>Constructive alignment, active learning, digital resource design and applied assessment preparation.</span></div>
+              </div>
+              <div class="example-evidence">
+                <h4>Example evidence</h4>
+                <ul>
+                  <li>Week-level teaching resources connecting facilities decisions to commercial and operational consequences.</li>
+                  <li>Activities prompting learners to analyse site attributes, feasibility, service flow and design trade-offs.</li>
+                  <li>Assessment-facing scaffolding that helps students move from concept knowledge to applied planning judgement.</li>
+                </ul>
               </div>
             </div>
           </article>
@@ -685,6 +724,14 @@
                 <div class="scan-item"><strong>Design response</strong><span>Create cycles of decision, consequence, feedback and reflection.</span></div>
                 <div class="scan-item"><strong>Evidence of capability</strong><span>Experiential design, scenario logic, feedback loops and authentic workplace transfer.</span></div>
               </div>
+              <div class="example-evidence">
+                <h4>Example evidence</h4>
+                <ul>
+                  <li>Simulation structure requiring learners to make operational choices rather than simply describe hotel management concepts.</li>
+                  <li>Decision areas covering pricing, staffing, service quality, maintenance, marketing and guest experience.</li>
+                  <li>Reflection prompts linking simulation outcomes to business reasoning and continuous improvement.</li>
+                </ul>
+              </div>
             </div>
           </article>
 
@@ -705,6 +752,14 @@
                 <div class="scan-item"><strong>Design problem</strong><span>Make complex legal responsibilities understandable and usable for front-line learners.</span></div>
                 <div class="scan-item"><strong>Design response</strong><span>Use plain-language explanations, realistic scenarios, visual cues and decision points.</span></div>
                 <div class="scan-item"><strong>Evidence of capability</strong><span>Compliance translation, learner-centred writing and assessment-ready resource design.</span></div>
+              </div>
+              <div class="example-evidence">
+                <h4>Example evidence</h4>
+                <ul>
+                  <li>Selected learner-guide excerpt explaining intoxication and duty-of-care concepts in plain language.</li>
+                  <li>Embedded video and QR prompts to support multimodal engagement and workplace relevance.</li>
+                  <li>Scenario-ready explanations that help learners recognise signs, respond appropriately and document decisions.</li>
+                </ul>
               </div>
             </div>
           </article>
@@ -727,6 +782,14 @@
                 <div class="scan-item"><strong>Design response</strong><span>Sequence concepts into workshop activities, examples, checks for understanding and application tasks.</span></div>
                 <div class="scan-item"><strong>Evidence of capability</strong><span>Technical translation, facilitator-ready design and workplace performance support.</span></div>
               </div>
+              <div class="example-evidence">
+                <h4>Example evidence</h4>
+                <ul>
+                  <li>Structured policy and standards mapping used to connect technical obligations to workplace decisions.</li>
+                  <li>Workshop-ready sequencing that moves from key concepts to applied judgement and quality assurance practice.</li>
+                  <li>Selected excerpts show how complex requirements are condensed into learner-facing explanations and tables.</li>
+                </ul>
+              </div>
             </div>
           </article>
         </div>
@@ -737,7 +800,7 @@
       <div class="wrap">
         <div class="section-heading">
           <h2>AI &amp; Analytics</h2>
-          <p>This section presents AI and analytics as demonstrated capability and professional practice. It does not claim completion of a specific MBA subject or unpublished client-owned curriculum.</p>
+          <p>This section presents AI and analytics as demonstrated capability and professional practice across research, design support, evaluation and responsible learning innovation.</p>
         </div>
         <div class="ai-layout">
           <article class="ai-panel">
@@ -748,13 +811,13 @@
               <li><strong>Design iteration:</strong> using AI to generate options, compare approaches, refine learning activities and improve clarity while retaining human review.</li>
               <li><strong>Analytics awareness:</strong> using evidence, learner needs, feedback and performance indicators to guide design decisions and improvement cycles.</li>
               <li><strong>Responsible AI:</strong> considering transparency, privacy, data quality, bias, assessment integrity and clear boundaries for appropriate learner use.</li>
-              <li><strong>Research Rex:</strong> experimenting with AI-supported research and knowledge workflows, including retrieval, structured notes, local models and human checkpoints.</li>
+              <li><strong>Research assistant experimentation:</strong> exploring an in-development AI-supported research workflow for structured notes, retrieval, source organisation, local model testing and human checkpoints.</li>
             </ul>
           </article>
           <aside class="ethics-panel">
-            <h3>Design Principles</h3>
-            <p>AI is treated as a support for professional judgement, not a replacement for it. The portfolio demonstrates a capability to work with AI-rich learning environments while maintaining academic integrity, accessibility, learner safety and client confidentiality.</p>
-            <p><strong>Current positioning:</strong> AI and analytics capability, not a claim of completed ownership over any proposed MBA AI and Data Analytics subject.</p>
+            <h3>Responsible AI Practice</h3>
+            <p>AI is treated as a support for professional judgement, not a replacement for it. My focus is on critical review, transparency, appropriate boundaries, academic integrity, accessibility, learner safety and client confidentiality.</p>
+            <p>Where AI is used in learning design, I consider what the tool is suitable for, what still requires human expertise, and how learners can be supported to use AI ethically and effectively.</p>
           </aside>
         </div>
       </div>
@@ -764,7 +827,7 @@
       <div class="wrap">
         <div class="section-heading">
           <h2>Evidence Approach</h2>
-          <p>Selected excerpts show the nature of the work without publishing complete proprietary documents. This keeps the portfolio credible, ethical and easier for a university hiring manager to scan.</p>
+          <p>Selected excerpts show the nature of the work without publishing complete proprietary documents. This keeps the portfolio credible, ethical and easier for education and workforce-learning audiences to scan.</p>
         </div>
         <div class="evidence-grid">
           <article class="evidence-card">
@@ -798,13 +861,13 @@
           <p class="eyebrow">About and contact</p>
           <h2>Practical, evidence-informed design for complex learning contexts.</h2>
           <p>My work sits at the intersection of curriculum design, assessment, digital learning, compliance-aware resource development and emerging AI capability. I am especially interested in learning experiences that help adults make better decisions in authentic professional contexts.</p>
-          <p>This portfolio is intentionally concise. It is designed to support an initial university conversation, then expand with more detailed artefacts, references or confidential examples where appropriate.</p>
+          <p>More detailed artefacts, references and confidential examples are available on request where sharing is appropriate and permissions allow.</p>
         </div>
         <aside class="contact-card">
           <h3>Contact</h3>
           <p>For learning design, curriculum, assessment, digital learning or AI-enabled learning opportunities.</p>
           <p><a href="mailto:dlowe.learningdesign@gmail.com">dlowe.learningdesign@gmail.com</a></p>
-          <p><a href="https://www.linkedin.com/in/damien-lowe-phd/" target="_blank" rel="noreferrer">linkedin.com/in/damien-lowe-phd</a></p>
+          <p><a href="https://www.linkedin.com/in/damien-lowe-ld" target="_blank" rel="noreferrer">linkedin.com/in/damien-lowe-ld</a></p>
         </aside>
       </div>
     </section>
@@ -818,3 +881,4 @@
   </footer>
 </body>
 </html>
+
